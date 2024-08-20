@@ -1,7 +1,7 @@
-import 'dotenv/config';
-import { PrismaClient } from "@prisma/client";
-import { execSync } from "child_process";
-import { randomUUID } from "crypto";
+import 'dotenv/config'
+import { PrismaClient } from '@prisma/client'
+import { execSync } from 'child_process'
+import { randomUUID } from 'crypto'
 
 const prisma = new PrismaClient()
 const schemaId = randomUUID()
@@ -23,7 +23,7 @@ beforeAll(async () => {
   execSync('yarn prisma migrate deploy')
 })
 
-afterAll(async() => {
+afterAll(async () => {
   await prisma.$executeRawUnsafe(`DROP SCHEMA IF EXISTS "${schemaId}" CASCADE `)
   prisma.$disconnect()
 })
