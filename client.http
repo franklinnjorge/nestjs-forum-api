@@ -29,7 +29,7 @@ Content-Type: application/json
 Authorization: Bearer {{session_token}}
 
 {
-  "title": "New Question 2",
+  "title": "New Question 21",
   "content": "Content of the question"
 }
 

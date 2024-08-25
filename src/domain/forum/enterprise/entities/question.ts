@@ -1,5 +1,3 @@
-/* eslint-disable accessor-pairs */
-/* eslint-disable @typescript-eslint/adjacent-overload-signatures */
 import { AggregateRoot } from '@/core/entities/aggregate-root'
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { Optional } from '@/core/types/optional'
@@ -37,6 +35,10 @@ export class Question extends AggregateRoot<QuestionProps> {
 
   get attachments() {
     return this.props.attachments
+  }
+
+  get content() {
+    return this.props.content
   }
 
   get createdAt() {
