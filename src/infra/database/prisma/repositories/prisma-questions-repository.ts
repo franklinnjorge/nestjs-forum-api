@@ -40,7 +40,7 @@ export class PrismaQuestionsRepository implements QuestionsRepository {
   async findMany({ page }: PaginationParams): Promise<Question[]> {
     const question = await this.prismaService.question.findMany({
       orderBy: {
-        createdAt: 'desc'
+        createdAt: 'asc'
       },
       take: 20,
       skip: (page - 1) * 20
